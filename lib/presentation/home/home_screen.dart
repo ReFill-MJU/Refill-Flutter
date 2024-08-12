@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:refill_app/core/app_bar/logo_app_bar.dart';
+import 'package:refill_app/core/component/round_24_container.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -7,12 +9,19 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Padding(
+    return const Scaffold(
+      appBar: LogoAppBar(),
+      body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
-          children: [BabyList()],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BabyList(),
+            SizedBox(
+              height: 8.0,
+            ),
+            Round24Container(),
+          ],
         ),
       ),
     );
