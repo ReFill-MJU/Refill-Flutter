@@ -134,4 +134,10 @@ class RefillThemeTextStyle {
     letterSpacing: -0.2,
     fontWeight: FontWeight.w300,
   );
+
+  static const TextStyle detail3 = TextStyle(
+    fontSize: 14,
+    letterSpacing: -0.2,
+    fontWeight: FontWeight.w300,
+  );
 }
