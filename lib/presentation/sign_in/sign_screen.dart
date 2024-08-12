@@ -1,0 +1,93 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_naver_login/flutter_naver_login.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../data/repository/member_repository.dart';
+import 'view/sign_button.dart';
+
+const storage = FlutterSecureStorage();
+final GlobalKey<ScaffoldMessengerState> snackBarKey =
+    GlobalKey<ScaffoldMessengerState>();
+
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  bool isSignIn = false;
+  String? accessToken;
+  String? expiresAt;
+  String? tokenType;
+  String? name;
+  String? refreshToken;
+
+  void _showSnackError(String error) {
+    snackBarKey.currentState?.showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.red,
+        content: Text(error.toString()),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SignInButton(
+              onPressed: () {
+                buttonLoginPressed();
+              },
+              svgPicture: SvgPicture.asset(
+                'assets/icon/ic_naver.svg',
+                width: 36,
+                height: 36,
+              ),
+              text: '네이버로 시작하기',
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Future<void> buttonLoginPressed() async {
+    try {
+      final NaverLoginResult res = await FlutterNaverLogin.logIn();
+      setState(() {
+        name = res.account.nickname;
+        isSignIn = true;
+        buttonTokenPressed();
+      });
+      print(res);
+
+    } catch (error) {
+      _showSnackError(error.toString());
+    }
+  }
+
+  Future<void> buttonTokenPressed() async {
+    try {
+      final NaverAccessToken res = await FlutterNaverLogin.currentAccessToken;
+      setState(() {
+        refreshToken = res.refreshToken;
+        accessToken = res.accessToken;
+        tokenType = res.tokenType;
+      });
+      final response = await MemberRepository.naverLogin(res.accessToken);
+      print(response);
+
+    } catch (error) {
+      _showSnackError(error.toString());
+    }
+  }
+}
