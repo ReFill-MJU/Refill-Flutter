@@ -12,9 +12,6 @@ class PrimaryTextFormField extends StatelessWidget
     this.minLines,
     this.hintText,
     this.initialValue,
-    this.errorText,
-    this.errorBorder,
-    this.errorStyle,
     this.onChanged,
   });
 
@@ -28,12 +25,6 @@ class PrimaryTextFormField extends StatelessWidget
   final int? maxLines;
   @override
   final String? initialValue;
-  @override
-  final String? errorText;
-  @override
-  final OutlineInputBorder? errorBorder;
-  @override
-  final TextStyle? errorStyle;
   @override
   final ValueChanged<String>? onChanged;
 
@@ -50,16 +41,18 @@ class PrimaryTextFormField extends StatelessWidget
         hintStyle: const TextStyle(
           color: RefillThemeColor.gray60,
         ),
+        fillColor: RefillThemeColor.gray10,
+        filled: true,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
-            color: RefillThemeColor.gray90,
+            color: RefillThemeColor.gray10,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: const BorderSide(
-            color: RefillThemeColor.primary90,
+            color: RefillThemeColor.sub80,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
@@ -68,9 +61,6 @@ class PrimaryTextFormField extends StatelessWidget
             color: RefillThemeColor.gray70,
           ),
         ),
-        errorText: errorText,
-        errorBorder: errorBorder,
-        errorStyle: errorStyle,
       ),
       onChanged: onChanged,
     );

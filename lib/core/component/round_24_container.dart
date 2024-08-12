@@ -69,7 +69,10 @@ class Round24Container extends ConsumerWidget {
                       ],
                     ),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 16.0,
+                ),
               ],
             ),
           ),

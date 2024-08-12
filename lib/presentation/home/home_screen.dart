@@ -4,6 +4,8 @@ import 'package:refill_app/core/app_bar/logo_app_bar.dart';
 import 'package:refill_app/core/component/round_24_container.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
 
+import '../../core/text_form_field/care_text_form_field.dart';
+
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
@@ -21,6 +23,7 @@ class HomeScreen extends ConsumerWidget {
               height: 8.0,
             ),
             Round24Container(),
+            CareTextFormField(),
           ],
         ),
       ),

@@ -11,11 +11,5 @@ abstract class BaseTextFormField {
 
   String? get initialValue;
 
-  String? get errorText;
-
-  OutlineInputBorder? get errorBorder;
-
-  TextStyle? get errorStyle;
-
   ValueChanged<String>? get onChanged;
 }
