@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refill_app/core/app_bar/primary_app_bar.dart';
 
 class BackButtonAppBar extends ConsumerWidget {
@@ -15,7 +16,11 @@ class BackButtonAppBar extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return PrimaryAppBar(
-      leading: leading,
+      leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: SvgPicture.asset('assets/icon/ic_left.svg')),
       title: title,
     );
   }

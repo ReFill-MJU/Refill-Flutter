@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:refill_app/core/button/primary_button.dart';
-import 'package:refill_app/data/repository/child_repository.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:refill_app/core/button/round_button.dart';
+import 'package:refill_app/core/theme/refill_theme_color.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -9,17 +10,22 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-appBar: AppBar(),
-      body: Column(
-        children: [
-          PrimaryButton(
-            onPressed: () {
-              ChildRepository.childcareTest('data');
-            },
-            enabled: true,
-            text: '안녕',
-          )
-        ],
+      appBar: AppBar(),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            RoundButton(
+              onPress: () {},
+              buttonChild: SvgPicture.asset(
+                'assets/icon/ic_plus.svg',
+              ),
+              style: IconButton.styleFrom(
+                backgroundColor: RefillThemeColor.sub90,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

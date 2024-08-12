@@ -22,6 +22,7 @@ class ApiClient {
     };
     if (accessToken != null) {
       headers["Authorization"] = "Bearer $accessToken";
+      print(accessToken);
     }
     return headers;
   }

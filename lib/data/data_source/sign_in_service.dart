@@ -32,6 +32,7 @@ class SignInService {
         var responseData = jsonDecode(utf8.decode(response.bodyBytes));
 
         String? token = responseData['accessToken'];
+        print(token);
 
         if (token != null) {
           await storage.write(key: "accessToken", value: token);
