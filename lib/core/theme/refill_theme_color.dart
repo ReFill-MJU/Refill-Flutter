@@ -17,5 +17,27 @@ class RefillThemeColor {
   static const Color gray90 = Color(0xFF242321);
   static const Color gray100 = Color(0xFF1A1918);
 
+  static const Color primary5 = Color(0xFFFFF3F2);
+  static const Color primary10 = Color(0xFFFFE7E5);
+  static const Color primary20 = Color(0xFFFFD7D3);
+  static const Color primary30 = Color(0xFFFFC0B9);
+  static const Color primary40 = Color(0xFFFFAFA6);
+  static const Color primary50 = Color(0xFFFF8577);
+  static const Color primary60 = Color(0xFFFF6857);
+  static const Color primary70 = Color(0xFFFA402B);
+  static const Color primary80 = Color(0xFFF72911);
+  static const Color primary90 = Color(0xFFFF1A00);
+
+  static const Color sub5 = Color(0xFFFFFCF4);
+  static const Color sub10 = Color(0xFFFFF9E6);
+  static const Color sub20 = Color(0xFFFFF5D4);
+  static const Color sub30 = Color(0xFFFFF0BD);
+  static const Color sub40 = Color(0xFFFFEBA3);
+  static const Color sub50 = Color(0xFFFFE37D);
+  static const Color sub60 = Color(0xFFFFDA58);
+  static const Color sub70 = Color(0xFFFFD027);
+  static const Color sub80 = Color(0xFFFFC700);
+  static const Color sub90 = Color(0xFFFFB500);
+
   static const Color naverColor = Color(0xFF06BD34);
 }
