@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 
 import '../../../core/button/primary_button.dart';
+import '../../../core/theme/refill_theme_text_style.dart';
 
 class SignInButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -38,7 +39,9 @@ class SignInButton extends StatelessWidget {
             svgPicture,
             Text(
               text,
-              style: const TextStyle(color: RefillThemeColor.realWhite),
+              style: RefillThemeTextStyle.head1.copyWith(
+                color: RefillThemeColor.realWhite,
+              ),
             ),
             const SizedBox(
               width: 24.0,
