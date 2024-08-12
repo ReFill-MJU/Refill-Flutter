@@ -26,6 +26,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "ansicolor",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/ansicolor-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "archive",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/archive-3.6.1",
       "packageUri": "lib/",
@@ -164,6 +170,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/csslib-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.8",
       "packageUri": "lib/",
@@ -266,6 +278,12 @@
       "languageVersion": "3.1"
     },
     {
+      "name": "flutter_native_splash",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_naver_login",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/flutter_naver_login-1.8.0",
       "packageUri": "lib/",
@@ -342,6 +360,12 @@
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/hotreloader-4.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "html",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/html-0.15.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "http",
@@ -686,6 +710,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "universal_io",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/universal_io-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/uuid-4.4.2",
       "packageUri": "lib/",
@@ -764,7 +794,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-12T13:41:13.498209Z",
+  "generated": "2024-08-12T14:28:45.668872Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///Users/kimarin/Developments/flutter",
