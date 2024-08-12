@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:refill_app/core/theme/refill_theme_color.dart';
 
 import '../base/base_button.dart';
 import '../base/bouncing.dart';
@@ -17,9 +18,9 @@ class PrimaryButton extends StatelessWidget implements BaseButton {
   @override
   final Color? textColor;
   @override
-  final Color backgroundColor;
+  final Color? backgroundColor;
   @override
-  final Color borderColor;
+  final Color? borderColor;
   @override
   final double? borderRadius;
   @override
@@ -37,8 +38,8 @@ class PrimaryButton extends StatelessWidget implements BaseButton {
       this.onPressed,
       required this.enabled,
       this.textColor,
-      required this.backgroundColor,
-      required this.borderColor,
+      this.backgroundColor,
+      this.borderColor,
       this.borderRadius,
       this.fontSize,
       this.buttonChild,
@@ -59,7 +60,7 @@ class PrimaryButton extends StatelessWidget implements BaseButton {
                   side: WidgetStateProperty.resolveWith(
                     (states) {
                       return BorderSide(
-                        color: borderColor,
+                        color: borderColor ?? RefillThemeColor.realWhite,
                         width: 1.0,
                       );
                     },
@@ -77,7 +78,7 @@ class PrimaryButton extends StatelessWidget implements BaseButton {
                         padding:
                             EdgeInsets.symmetric(vertical: fontPadding ?? 8.0),
                         child: Text(
-                          text!,
+                          text ?? '',
                           style: TextStyle(
                             color: textColor,
                             fontSize: fontSize,
@@ -95,7 +96,7 @@ class PrimaryButton extends StatelessWidget implements BaseButton {
                 side: WidgetStateProperty.resolveWith(
                   (states) {
                     return BorderSide(
-                      color: borderColor,
+                      color: borderColor ?? RefillThemeColor.realWhite,
                       width: 1.0,
                     );
                   },
