@@ -39,7 +39,7 @@ class SignInButton extends StatelessWidget {
             svgPicture,
             Text(
               text,
-              style: RefillThemeTextStyle.head1.copyWith(
+              style: RefillThemeTextStyle.button0.copyWith(
                 color: RefillThemeColor.realWhite,
               ),
             ),

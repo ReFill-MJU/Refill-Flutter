@@ -7,7 +7,7 @@
     <application
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
-        android:label="refill_app">
+        android:label="늘봄">
 
         <meta-data
             android:name="com.naver.sdk.clientId"

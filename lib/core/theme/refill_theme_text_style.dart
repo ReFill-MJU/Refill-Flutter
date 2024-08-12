@@ -94,11 +94,8 @@ class RefillThemeTextStyle {
     letterSpacing: -0.2,
   );
 
-  static const TextStyle button2 = TextStyle(
-    fontSize: 16,
-    letterSpacing: -0.2,
-    height: 1.2
-  );
+  static const TextStyle button2 =
+      TextStyle(fontSize: 16, letterSpacing: -0.2, height: 1.2);
 
   static const TextStyle button3 = TextStyle(
     fontSize: 14,

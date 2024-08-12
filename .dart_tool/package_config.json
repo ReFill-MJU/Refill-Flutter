@@ -26,6 +26,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "archive",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/archive-3.6.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "args",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/args-2.5.0",
       "packageUri": "lib/",
@@ -248,6 +254,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/flutter_lints-4.0.0",
       "packageUri": "lib/",
@@ -348,6 +360,12 @@
       "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "image",
+      "rootUri": "file:///Users/kimarin/.pub-cache/hosted/pub.dev/image-4.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "image_picker",
@@ -746,7 +764,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-08-12T08:51:22.032106Z",
+  "generated": "2024-08-12T13:41:13.498209Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///Users/kimarin/Developments/flutter",
