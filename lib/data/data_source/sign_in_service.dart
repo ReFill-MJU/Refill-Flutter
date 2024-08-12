@@ -1,3 +1,4 @@
+import 'dart:convert' as convert;
 import 'dart:convert';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -29,12 +30,16 @@ class SignInApiService {
       );
 
       if (response.statusCode == 200) {
-        return utf8.decode(response.bodyBytes);
+        var data = utf8.decode(response.bodyBytes);
+        await storage.write(
+            key: "accessToken", value: data);
+        return data;
       } else {
         throw Exception('네이버 로그인 실패');
       }
     } catch (error) {
       return null;
     }
+    return null;
   }
 }

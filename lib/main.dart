@@ -26,9 +26,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: RefillThemeColor.realWhite,
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: RefillThemeColor.black,
         ),
+        fontFamily: 'Pretendard',
       ),
       home: const SignInScreen(),
       debugShowCheckedModeBanner: false,

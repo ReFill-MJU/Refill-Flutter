@@ -16,4 +16,6 @@ class RefillThemeColor {
   static const Color gray80 = Color(0xFF363532);
   static const Color gray90 = Color(0xFF242321);
   static const Color gray100 = Color(0xFF1A1918);
+
+  static const Color naverColor = Color(0xFF06BD34);
 }

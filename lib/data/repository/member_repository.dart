@@ -4,6 +4,7 @@ class MemberRepository {
   static Future<String?> naverLogin(String accessToken) async {
     print(accessToken);
     String? response = await SignInApiService().naverSignIn(accessToken);
+
     return response;
   }
 }

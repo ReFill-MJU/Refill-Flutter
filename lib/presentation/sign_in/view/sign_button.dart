@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:refill_app/core/theme/refill_theme_color.dart';
 
 import '../../../core/button/primary_button.dart';
 
@@ -29,14 +30,15 @@ class SignInButton extends StatelessWidget {
         enabled: true,
         onPressed: onPressed,
         borderRadius: 5,
-        backgroundColor: backgroundColor ?? const Color(0xFFFFFFFF),
-        borderColor: borderColor ?? const Color(0xFFFFFFFF),
+        backgroundColor: backgroundColor ?? RefillThemeColor.naverColor,
+        borderColor: borderColor ?? RefillThemeColor.naverColor,
         buttonChild: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             svgPicture,
             Text(
               text,
+              style: const TextStyle(color: RefillThemeColor.realWhite),
             ),
             const SizedBox(
               width: 24.0,

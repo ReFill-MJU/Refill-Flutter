@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:refill_app/core/theme/refill_theme_color.dart';
 
 import '../../data/repository/member_repository.dart';
 import 'view/sign_button.dart';
@@ -36,6 +37,18 @@ class _SignInScreenState extends State<SignInScreen> {
     );
   }
 
+  _asyncMethod() async {
+    if (await storage.read(key: "accessToken") != null) {
+      print('object');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _asyncMethod();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +64,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 'assets/icon/ic_naver.svg',
                 width: 36,
                 height: 36,
+                colorFilter: const ColorFilter.mode(
+                    RefillThemeColor.realWhite, BlendMode.srcIn),
               ),
               text: '네이버로 시작하기',
             ),
@@ -69,7 +84,6 @@ class _SignInScreenState extends State<SignInScreen> {
         buttonTokenPressed();
       });
       print(res);
-
     } catch (error) {
       _showSnackError(error.toString());
     }
@@ -85,7 +99,6 @@ class _SignInScreenState extends State<SignInScreen> {
       });
       final response = await MemberRepository.naverLogin(res.accessToken);
       print(response);
-
     } catch (error) {
       _showSnackError(error.toString());
     }
