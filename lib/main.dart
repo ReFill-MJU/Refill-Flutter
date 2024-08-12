@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_config/flutter_config.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
@@ -9,7 +8,6 @@ import 'data/data_source/app_url.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterConfig.loadEnvVariables();
   await initializeDateFormatting('ko_KR', null);
   await dotenv.load(fileName: '.env');
   await AppUrl.initialize();

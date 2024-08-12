@@ -301,7 +301,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Load environment variables from .env file\nexport $(cat .env | xargs)\n\n# Replace variables in Info.plist with values from .env\n/usr/libexec/PlistBuddy -c \"Set :naverConsumerKey $NAVER_CLIENT_ID\" \"${PROJECT_DIR}/Runner/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :naverConsumerSecret $NAVER_CLIENT_SECRET\" \"${PROJECT_DIR}/Runner/Info.plist\"\n/usr/libexec/PlistBuddy -c \"Set :naverServiceAppName $NAVER_CLIENT_NAME\" \"${PROJECT_DIR}/Runner/Info.plist\"\n";
 		};
 		823BC1E5B47C72BC96CD1FE4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -88,11 +88,11 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>naverConsumerKey</key>
-	<string></string>
+	<string>gCxXhKUcCLiF1bONzqHH</string>
 	<key>naverConsumerSecret</key>
-	<string></string>
+	<string>6mnEczlcdb</string>
 	<key>naverServiceAppName</key>
-	<string></string>
+	<string>Refill</string>
 	<key>naverServiceAppUrlScheme</key>
 	<string>refillMJU</string>
 </dict>
