@@ -1,4 +1,3 @@
-import 'dart:convert' as convert;
 import 'dart:convert';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -10,7 +9,7 @@ import 'api_client.dart';
 const storage = FlutterSecureStorage();
 final ApiClient apiClient = ApiClient();
 
-class SignInApiService {
+class SignInService {
   Future<String?> naverSignIn(String accessToken) async {
     try {
       var url = Uri.http(
@@ -30,16 +29,21 @@ class SignInApiService {
       );
 
       if (response.statusCode == 200) {
-        var data = utf8.decode(response.bodyBytes);
-        await storage.write(
-            key: "accessToken", value: data);
-        return data;
+        var responseData = jsonDecode(utf8.decode(response.bodyBytes));
+
+        String? token = responseData['accessToken'];
+
+        if (token != null) {
+          await storage.write(key: "accessToken", value: token);
+          return token;
+        } else {
+          throw Exception('`accessToken` 필드가 응답 데이터에 없습니다.');
+        }
       } else {
         throw Exception('네이버 로그인 실패');
       }
     } catch (error) {
       return null;
     }
-    return null;
   }
 }

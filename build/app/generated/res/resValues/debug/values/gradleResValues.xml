@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Automatically generated file. DO NOT MODIFY -->
+
+    <!-- Value from default config. -->
+    <string name="APP_URL" translatable="false">223.130.137.76:8080</string>
+    <!-- Value from default config. -->
+    <string name="NAVER_CLIENT_ID" translatable="false">gCxXhKUcCLiF1bONzqHH</string>
+    <!-- Value from default config. -->
+    <string name="NAVER_CLIENT_NAME" translatable="false">Refill</string>
+    <!-- Value from default config. -->
+    <string name="NAVER_CLIENT_SECRET" translatable="false">6mnEczlcdb</string>
+
+</resources>

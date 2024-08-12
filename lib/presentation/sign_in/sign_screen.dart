@@ -5,6 +5,7 @@ import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
+import 'package:refill_app/presentation/home/home_screen.dart';
 
 import '../../data/repository/member_repository.dart';
 import 'view/sign_button.dart';
@@ -39,14 +40,20 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _asyncMethod() async {
     if (await storage.read(key: "accessToken") != null) {
-      print('object');
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+        (route) => false,
+      );
     }
   }
 
   @override
   void initState() {
     super.initState();
-    _asyncMethod();
+    // _asyncMethod();
   }
 
   @override
@@ -83,7 +90,6 @@ class _SignInScreenState extends State<SignInScreen> {
         isSignIn = true;
         buttonTokenPressed();
       });
-      print(res);
     } catch (error) {
       _showSnackError(error.toString());
     }
@@ -97,8 +103,16 @@ class _SignInScreenState extends State<SignInScreen> {
         accessToken = res.accessToken;
         tokenType = res.tokenType;
       });
-      final response = await MemberRepository.naverLogin(res.accessToken);
-      print(response);
+      await MemberRepository.naverLogin(res.accessToken);
+      if (await storage.read(key: "accessToken") != null) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+          (route) => false,
+        );
+      }
     } catch (error) {
       _showSnackError(error.toString());
     }
