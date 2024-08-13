@@ -6,7 +6,7 @@ part of 'my_child_list_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$myChildListModelHash() => r'8517cd6217bc8b79f4a2d39f100c003877cb9cc8';
+String _$myChildListModelHash() => r'7c4f997413baa2eee7cc9778160729f2f05b98d4';
 
 /// See also [myChildListModel].
 @ProviderFor(myChildListModel)

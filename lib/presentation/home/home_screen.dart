@@ -23,6 +23,7 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<MyChildListModel>> childList =
         ref.watch(myChildListModelProvider);
+
     return Scaffold(
       appBar: const LogoAppBar(),
       body: childList.when(
@@ -56,7 +57,7 @@ class HomeScreen extends ConsumerWidget {
                                       child: Column(
                                         children: [
                                           Text(
-                                            '보름이를 위한 aI 서비스',
+                                            '우리 아이 맞춤형 AI 서비스',
                                             style: RefillThemeTextStyle.body4
                                                 .copyWith(
                                                     color: RefillThemeColor

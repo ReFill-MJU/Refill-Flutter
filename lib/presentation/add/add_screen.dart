@@ -122,12 +122,20 @@ class AddScreen extends ConsumerWidget {
                             switch (moveProvider) {
                               case "first":
                                 move.moveToSecondPage();
-                                ref.read(addInfoNotifierProvider.notifier).childAdd();
+                                ref
+                                    .read(addInfoNotifierProvider.notifier)
+                                    .childAdd();
                               case "second":
                                 move.moveToThirdPage();
+                                ref
+                                    .read(answerNotifierProvider.notifier)
+                                    .firstAnswer(1);
                                 ref.invalidate(answerNotifierProvider);
                               case "third":
                                 move.moveToFourthPage();
+                                ref
+                                    .read(answerNotifierProvider.notifier)
+                                    .secondAnswer(1);
                                 ref.invalidate(answerNotifierProvider);
                               case "fourth":
                                 Navigator.pushAndRemoveUntil(
