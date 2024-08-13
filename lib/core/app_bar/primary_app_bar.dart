@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
+import 'package:refill_app/core/theme/refill_theme_text_style.dart';
 
 import '../base/base_app_bar.dart';
 
@@ -19,7 +20,7 @@ class PrimaryAppBar extends StatelessWidget
   @override
   final double? leadingWidth;
   @override
-  final Widget? title;
+  final String? title;
   @override
   final List<Widget>? actions;
   @override
@@ -32,7 +33,11 @@ class PrimaryAppBar extends StatelessWidget
     return AppBar(
       leading: leading,
       leadingWidth: leadingWidth,
-      title: title,
+      title: title != null
+          ? Text(title!,
+              style: RefillThemeTextStyle.title2
+                  .copyWith(color: RefillThemeColor.gray80))
+          : null,
       actions: actions,
       centerTitle: centerTitle,
       titleSpacing: 0,

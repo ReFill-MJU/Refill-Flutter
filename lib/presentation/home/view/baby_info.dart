@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:refill_app/core/button/round_button.dart';
 import 'package:refill_app/core/component/round_24_container.dart';
 
 import '../../../core/component/basic_picture_fix.dart';
@@ -22,59 +23,78 @@ class BabyInfo extends ConsumerWidget {
               children: [
                 const BasicPictureFix(size: 93),
                 const SizedBox(width: 16.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        SvgPicture.asset('assets/icon/ic_boy.svg'),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        Text(
-                          '보름이',
-                          style: RefillThemeTextStyle.head1.copyWith(
-                            color: RefillThemeColor.primary50,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          SvgPicture.asset('assets/icon/ic_boy.svg'),
+                          const SizedBox(
+                            width: 8.0,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 8.0,
-                        ),
-                        Text(
-                          '한 살',
-                          style: RefillThemeTextStyle.body6.copyWith(
-                            color: RefillThemeColor.sub90,
+                          Text(
+                            '보름이',
+                            style: RefillThemeTextStyle.head1.copyWith(
+                              color: RefillThemeColor.primary50,
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                    Text(
-                      '아장아장',
-                      style: RefillThemeTextStyle.body6
-                          .copyWith(color: RefillThemeColor.gray40),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          '2024-01-01',
-                          style: RefillThemeTextStyle.body6.copyWith(
-                            color: RefillThemeColor.gray70,
+                          const SizedBox(
+                            width: 8.0,
                           ),
-                        ),
-                        const SizedBox(
-                          width: 4.0,
-                        ),
-                        Text(
-                          '+28일',
-                          style: RefillThemeTextStyle.body3
-                              .copyWith(color: RefillThemeColor.sub90),
-                        ),
-                      ],
-                    ),
-                  ],
+                          Text(
+                            '한 살',
+                            style: RefillThemeTextStyle.body6.copyWith(
+                              color: RefillThemeColor.sub90,
+                            ),
+                          )
+                        ],
+                      ),
+                      Text(
+                        '아장아장',
+                        style: RefillThemeTextStyle.body6
+                            .copyWith(color: RefillThemeColor.gray40),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Text(
+                                '2024-01-01',
+                                style: RefillThemeTextStyle.body6.copyWith(
+                                  color: RefillThemeColor.gray70,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 4.0,
+                              ),
+                              Text(
+                                '+28일',
+                                style: RefillThemeTextStyle.body3
+                                    .copyWith(color: RefillThemeColor.sub90),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(
                   height: 16.0,
+                ),
+                RoundButton(
+                  onPress: () {},
+                  buttonChild: SvgPicture.asset(
+                    'assets/icon/ic_share.svg',
+                    colorFilter: const ColorFilter.mode(
+                        RefillThemeColor.primary50, BlendMode.srcIn),
+                  ),
+                  style: IconButton.styleFrom(
+                    backgroundColor: RefillThemeColor.sub10,
+                  ),
                 ),
               ],
             ),

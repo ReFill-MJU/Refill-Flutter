@@ -55,7 +55,7 @@ class PrimaryTextFormField extends StatelessWidget
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
-            color: RefillThemeColor.primary30,
+            color: RefillThemeColor.sub90,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(

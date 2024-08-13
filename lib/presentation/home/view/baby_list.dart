@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:refill_app/data/data_source/child_service.dart';
+import 'package:refill_app/presentation/add/add_screen.dart';
 import 'package:refill_app/presentation/home/view/baby_button.dart';
 
 import '../../../core/button/round_button.dart';
@@ -18,7 +18,12 @@ class BabyList extends ConsumerWidget {
         children: [
           RoundButton(
             onPress: () {
-              ChildService().childcareTest('너는 어디에 가장 전문적이라고 생각해? 어떤 질문을 해야 적절할 지 알려줘');
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (builder) => const AddScreen(),
+                ),
+              );
             },
             buttonChild: SvgPicture.asset(
               'assets/icon/ic_plus.svg',

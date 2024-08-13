@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:refill_app/core/app_bar/logo_app_bar.dart';
+import 'package:refill_app/core/button/primary_button.dart';
 import 'package:refill_app/core/component/round_top_20_container.dart';
 import 'package:refill_app/core/text_form_field/care_text_form_field.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 import 'package:refill_app/core/theme/refill_theme_text_style.dart';
 import 'package:refill_app/presentation/home/view/baby_info.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
-
-import '../../core/button/yellow_button.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key, required this.name, this.profileImage});
@@ -58,69 +57,87 @@ class HomeScreen extends ConsumerWidget {
                                 Text(
                                   '보육 전문가 늘봄과 함께해요',
                                   style: RefillThemeTextStyle.title1.copyWith(
-                                      color: RefillThemeColor.realWhite),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        RoundVerticalContainer(
-                          bottom: 20.0,
-                          color: RefillThemeColor.sub10,
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              children: [
-                                const RoundVerticalContainer(
-                                  child: SizedBox(
-                                    height: 50,
+                                    color: RefillThemeColor.realWhite,
                                   ),
                                 ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: SvgPicture.asset(
-                                        'assets/icon/ic_sound.svg',
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: SvgPicture.asset(
-                                        'assets/icon/ic_send.svg',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(
-                                  height: 8.0,
-                                ),
-                                GestureDetector(
-                                  onTap: () {},
-                                  child: const CareTextFormField(),
-                                ),
                               ],
                             ),
                           ),
                         ),
-                        const SizedBox(height: 16.0),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                          child: SizedBox(
-                            width: double.infinity,
-                            child: YellowButton(
-                                text: '함께하기', onPressed: () {}, enabled: true),
-                          ),
-                        ),
+                        Container(
+                          height: 1000,
+                          decoration: const BoxDecoration(
+                              color: RefillThemeColor.sub10),
+                        )
                       ],
                     ),
                   ),
                 ],
               ),
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.only(bottom: 16.0, left: 16.0, right: 16.0),
+            child: Column(
+              children: [
+                Container(
+                  decoration:
+                      const BoxDecoration(color: RefillThemeColor.sub10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Row(
+                        children: [
+                          SizedBox(
+                            width: 8.0,
+                          ),
+                          PrimaryButton(
+                            enabled: true,
+                            text: '👼🏻 아이를 위한 복지 사업을 추천해줘',
+                            textColor: RefillThemeColor.sub90,
+                            borderColor: RefillThemeColor.sub90,
+                            borderRadius: 32.0,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          GestureDetector(
+                            onTap: () {},
+                            child: SvgPicture.asset(
+                              'assets/icon/ic_sound.svg',
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 4.0,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: SvgPicture.asset(
+                              'assets/icon/ic_send.svg',
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8.0,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                RoundVerticalContainer(
+                  bottom: 20.0,
+                  color: RefillThemeColor.sub10,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {},
+                      child: const CareTextFormField(),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
