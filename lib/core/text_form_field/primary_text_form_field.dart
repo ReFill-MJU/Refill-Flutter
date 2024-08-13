@@ -49,7 +49,7 @@ class PrimaryTextFormField extends StatelessWidget
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
-            color: RefillThemeColor.gray10,
+            color: RefillThemeColor.gray20,
           ),
         ),
         focusedBorder: OutlineInputBorder(

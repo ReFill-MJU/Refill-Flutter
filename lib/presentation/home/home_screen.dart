@@ -11,10 +11,9 @@ import 'package:refill_app/presentation/home/view/baby_info.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key, required this.name, this.profileImage});
-
-  final String name;
-  final String? profileImage;
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -42,15 +42,10 @@ class _SignInScreenState extends State<SignInScreen> {
 
   _asyncMethod() async {
     if (await storage.read(key: "accessToken") != null) {
-      name = await storage.read(key: "name");
-      profileImage = await storage.read(key: 'profileImage');
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(
-            name: name!,
-            profileImage: profileImage,
-          ),
+          builder: (context) => HomeScreen(),
         ),
         (route) => false,
       );
@@ -136,10 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(
-            builder: (context) => HomeScreen(
-              name: name,
-              profileImage: profileImage,
-            ),
+            builder: (context) => const HomeScreen(),
           ),
           (route) => false,
         );
