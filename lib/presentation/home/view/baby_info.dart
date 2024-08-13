@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:refill_app/core/button/round_button.dart';
 import 'package:refill_app/core/component/round_24_container.dart';
 import 'package:refill_app/data/model/child_detail_model.dart';
+import 'package:refill_app/presentation/home/view/summary_bottom.dart';
 import 'package:refill_app/presentation/home/view_model/my_child_detail_notifier.dart';
 import 'package:refill_app/presentation/home/view_model/seleceted_provider.dart';
 
+import '../../../core/button/round_button.dart';
 import '../../../core/component/basic_picture_fix.dart';
 import '../../../core/theme/refill_theme_color.dart';
 import '../../../core/theme/refill_theme_text_style.dart';
+
+void showDiaryCommentBottomSheet(
+  BuildContext context,
+) {
+  showModalBottomSheet<void>(
+    context: context,
+    isScrollControlled: true,
+    backgroundColor: RefillThemeColor.realWhite,
+    builder: (BuildContext context) {
+      return const SummaryBottom();
+    },
+  );
+}
 
 class BabyInfo extends ConsumerWidget {
   const BabyInfo({super.key});
@@ -20,7 +34,7 @@ class BabyInfo extends ConsumerWidget {
         .watch(myChildDetailModelProvider(ref.watch(selectedChildIdProvider)));
 
     return childInfo.when(
-      data: (data) {
+      data: (child) {
         return Round24Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +56,7 @@ class BabyInfo extends ConsumerWidget {
                                 width: 8.0,
                               ),
                               Text(
-                                '보름이',
+                                child.name,
                                 style: RefillThemeTextStyle.head1.copyWith(
                                   color: RefillThemeColor.primary50,
                                 ),
@@ -51,57 +65,57 @@ class BabyInfo extends ConsumerWidget {
                                 width: 8.0,
                               ),
                               Text(
-                                '한 살',
-                                style: RefillThemeTextStyle.body6.copyWith(
+                                child.ageKorean,
+                                style: RefillThemeTextStyle.button3.copyWith(
                                   color: RefillThemeColor.sub90,
                                 ),
-                              )
+                              ),
                             ],
                           ),
                           Text(
-                            '아장아장',
+                            child.comment,
                             style: RefillThemeTextStyle.body6
-                                .copyWith(color: RefillThemeColor.gray40),
+                                .copyWith(color: RefillThemeColor.gray80),
                           ),
+                          const SizedBox(height: 2.0),
                           Row(
-                            mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
                                   Text(
-                                    '2024-01-01',
+                                    child.birth,
                                     style: RefillThemeTextStyle.body6.copyWith(
                                       color: RefillThemeColor.gray70,
                                     ),
                                   ),
                                   const SizedBox(
-                                    width: 4.0,
+                                    width: 8.0,
                                   ),
                                   Text(
-                                    '+28일',
-                                    style: RefillThemeTextStyle.body3.copyWith(
+                                    'D+${child.dBirth}',
+                                    style: RefillThemeTextStyle.body2.copyWith(
                                         color: RefillThemeColor.sub90),
+                                  ),
+                                  RoundButton(
+                                    onPress: () {
+                                      showDiaryCommentBottomSheet(context);
+                                    },
+                                    buttonChild: SvgPicture.asset(
+                                      'assets/icon/ic_share.svg',
+                                      colorFilter: const ColorFilter.mode(
+                                          RefillThemeColor.primary50,
+                                          BlendMode.srcIn),
+                                    ),
+                                    style: IconButton.styleFrom(
+                                      backgroundColor: RefillThemeColor.sub10,
+                                    ),
                                   ),
                                 ],
                               ),
                             ],
                           ),
                         ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 16.0,
-                    ),
-                    RoundButton(
-                      onPress: () {},
-                      buttonChild: SvgPicture.asset(
-                        'assets/icon/ic_share.svg',
-                        colorFilter: const ColorFilter.mode(
-                            RefillThemeColor.primary50, BlendMode.srcIn),
-                      ),
-                      style: IconButton.styleFrom(
-                        backgroundColor: RefillThemeColor.sub10,
                       ),
                     ),
                   ],

@@ -18,7 +18,7 @@ Future<ChildDetailModel> myChildDetailModel(
 
   final response = await ChildRepository.myChildDetail(childId);
   final json = jsonDecode(response) as Map<String, dynamic>;
-  final data = json['data'] as Map<String, dynamic>;
+  final data = json['child'] as Map<String, dynamic>;
 
   return ChildDetailModel.fromJson(data);
 }

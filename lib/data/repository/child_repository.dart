@@ -1,8 +1,11 @@
 import 'package:refill_app/data/data_source/child_service.dart';
 
 class ChildRepository {
-  static Future<String> childcareTest(String data) async {
-    String? response = await ChildService().childcareTest(data);
+  static Future<String> childcareTest(int childId, String data) async {
+    print(data);
+
+    String? response = await ChildService().childcareTest(childId, data);
+    print(response);
     return response;
   }
 

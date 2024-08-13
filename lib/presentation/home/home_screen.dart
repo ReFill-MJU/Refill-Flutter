@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:refill_app/core/app_bar/logo_app_bar.dart';
 import 'package:refill_app/core/button/primary_button.dart';
 import 'package:refill_app/core/button/yellow_button.dart';
@@ -12,7 +11,9 @@ import 'package:refill_app/data/model/my_child_list_model.dart';
 import 'package:refill_app/presentation/add/add_screen.dart';
 import 'package:refill_app/presentation/home/view/baby_info.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
+import 'package:refill_app/presentation/home/view_model/ai_message_notifier.dart';
 import 'package:refill_app/presentation/home/view_model/my_child_list_notifier.dart';
+import 'package:refill_app/presentation/home/view_model/seleceted_provider.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({
@@ -23,6 +24,8 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<MyChildListModel>> childList =
         ref.watch(myChildListModelProvider);
+    final List<String> aiMessages =
+        ref.watch(aiMessageNotifierProvider).asData?.value ?? [];
 
     return Scaffold(
       appBar: const LogoAppBar(),
@@ -42,13 +45,9 @@ class HomeScreen extends ConsumerWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const BabyList(),
-                                  const SizedBox(
-                                    height: 8.0,
-                                  ),
+                                  const SizedBox(height: 8.0),
                                   const BabyInfo(),
-                                  const SizedBox(
-                                    height: 16.0,
-                                  ),
+                                  const SizedBox(height: 16.0),
                                   RoundVerticalContainer(
                                     top: 20.0,
                                     color: RefillThemeColor.primary40,
@@ -63,9 +62,7 @@ class HomeScreen extends ConsumerWidget {
                                                     color: RefillThemeColor
                                                         .realWhite),
                                           ),
-                                          const SizedBox(
-                                            height: 4,
-                                          ),
+                                          const SizedBox(height: 4),
                                           Text(
                                             '보육 전문가 늘봄과 함께해요',
                                             style: RefillThemeTextStyle.title1
@@ -77,12 +74,29 @@ class HomeScreen extends ConsumerWidget {
                                       ),
                                     ),
                                   ),
+                                  // Display AI messages here
                                   Container(
                                     height: 1000,
                                     decoration: const BoxDecoration(
                                       color: RefillThemeColor.sub10,
                                     ),
-                                  )
+                                    child: ListView.builder(
+                                      padding: const EdgeInsets.all(16.0),
+                                      itemCount: aiMessages.length,
+                                      itemBuilder: (context, index) {
+                                        return Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                              vertical: 8.0),
+                                          child: RoundVerticalContainer(
+                                            child: Text(
+                                              aiMessages[index],
+                                              style: RefillThemeTextStyle.body2,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -99,41 +113,29 @@ class HomeScreen extends ConsumerWidget {
                             decoration: const BoxDecoration(
                                 color: RefillThemeColor.sub10),
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                const Row(
+                                Row(
                                   children: [
-                                    SizedBox(
-                                      width: 8.0,
-                                    ),
+                                    const SizedBox(width: 8.0),
                                     PrimaryButton(
+                                      onPressed: () {
+                                        ref
+                                            .read(aiMessageNotifierProvider
+                                                .notifier)
+                                            .postMessage(
+                                              ref
+                                                  .read(selectedChildIdProvider
+                                                      .notifier)
+                                                  .state!,
+                                              '아이를 위한 복지 사업을 추천해줘',
+                                            );
+                                      },
                                       enabled: true,
                                       text: '👼🏻 아이를 위한 복지 사업을 추천해줘',
                                       textColor: RefillThemeColor.sub90,
                                       borderColor: RefillThemeColor.sub90,
                                       borderRadius: 32.0,
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: SvgPicture.asset(
-                                        'assets/icon/ic_sound.svg',
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 4.0,
-                                    ),
-                                    GestureDetector(
-                                      onTap: () {},
-                                      child: SvgPicture.asset(
-                                        'assets/icon/ic_send.svg',
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      width: 8.0,
                                     ),
                                   ],
                                 ),
@@ -159,31 +161,23 @@ class HomeScreen extends ConsumerWidget {
               : Center(
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 64.0,
-                      ),
+                      const SizedBox(height: 64.0),
                       Image.asset('assets/image/img_finish.png'),
-                      const SizedBox(
-                        height: 16.0,
-                      ),
+                      const SizedBox(height: 16.0),
                       Text(
                         '아직 아이가 없어요!',
                         style: RefillThemeTextStyle.title2
                             .copyWith(color: RefillThemeColor.primary60),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(
-                        height: 8.0,
-                      ),
+                      const SizedBox(height: 8.0),
                       Text(
                         '내 아이를 등록하고\n맞춤형 AI 늘봄이에게 정보를 얻어 보세요',
                         style: RefillThemeTextStyle.body2
                             .copyWith(color: RefillThemeColor.gray60),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(
-                        height: 16.0,
-                      ),
+                      const SizedBox(height: 16.0),
                       SizedBox(
                         width: double.infinity,
                         child: Padding(

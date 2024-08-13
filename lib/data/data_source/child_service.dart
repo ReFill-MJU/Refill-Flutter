@@ -5,8 +5,8 @@ import 'api_client.dart';
 final ApiClient apiClient = ApiClient();
 
 class ChildService {
-  Future<String> childcareTest(String data) async {
-    const url = '/childcare/test';
+  Future<String> childcareTest(int childId, String data) async {
+    final url = '/childcare/$childId/test';
 
     final body = jsonEncode(
       {
@@ -80,6 +80,19 @@ class ChildService {
       return utf8.decode(response.bodyBytes);
     } else {
       throw Exception('아이 상세 조회 실패');
+    }
+  }
+
+  Future<String> summary(int childId) async {
+    final url = '/childcare/$childId/summary';
+
+    final response = await apiClient.get(
+      url,
+    );
+    if (response.statusCode == 200) {
+      return utf8.decode(response.bodyBytes);
+    } else {
+      throw Exception('아이 요약 조회 실패');
     }
   }
 }
