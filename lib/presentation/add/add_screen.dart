@@ -7,6 +7,7 @@ import 'package:refill_app/presentation/add/view/add_fourth.dart';
 import 'package:refill_app/presentation/add/view/add_second.dart';
 import 'package:refill_app/presentation/add/view/add_third.dart';
 import 'package:refill_app/presentation/add/view_model/move_notifier.dart';
+import 'package:refill_app/presentation/finish/finish_screen.dart';
 import 'package:refill_app/presentation/home/home_screen.dart';
 
 import '../../core/app_bar/back_left_title_app_bar.dart';
@@ -120,7 +121,7 @@ class AddScreen extends ConsumerWidget {
                                 Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const HomeScreen(),
+                                    builder: (context) => const FinishScreen(),
                                   ),
                                   (route) => false,
                                 );
