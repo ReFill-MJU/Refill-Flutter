@@ -31,14 +31,17 @@ class BabyInfo extends ConsumerWidget {
                         const SizedBox(
                           width: 8.0,
                         ),
-                        Text('보름이',
-                            style: RefillThemeTextStyle.head1
-                                .copyWith(color: RefillThemeColor.primary50)),
+                        Text(
+                          '보름이',
+                          style: RefillThemeTextStyle.head1.copyWith(
+                            color: RefillThemeColor.primary50,
+                          ),
+                        ),
                         const SizedBox(
                           width: 8.0,
                         ),
                         Text(
-                          '1살',
+                          '한 살',
                           style: RefillThemeTextStyle.body6.copyWith(
                             color: RefillThemeColor.sub90,
                           ),
