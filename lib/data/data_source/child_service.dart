@@ -33,4 +33,23 @@ class ChildService {
     }
   }
 
+  Future<String> childAdd(String name, String gender, String birth) async {
+    const url = '/child';
+
+    final body = jsonEncode(
+      {
+        'name': name,
+        'gender': gender,
+        'birth': birth,
+      },
+    );
+
+    final response = await apiClient.post(url, body: body);
+    if (response.statusCode == 200) {
+      print(utf8.decode(response.bodyBytes));
+      return utf8.decode(response.bodyBytes);
+    } else {
+      throw Exception('내 아이 추가 실패');
+    }
+  }
 }

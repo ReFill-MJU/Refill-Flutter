@@ -11,4 +11,10 @@ class ChildRepository {
     print(response);
     return response;
   }
+
+  static Future<String> childAdd(
+      String name, String gender, String birth) async {
+    String? response = await ChildService().childAdd(name, gender, birth);
+    return response;
+  }
 }

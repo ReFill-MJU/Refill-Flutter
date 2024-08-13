@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_naver_login/flutter_naver_login.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:refill_app/core/app_bar/primary_app_bar.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 import 'package:refill_app/core/theme/refill_theme_text_style.dart';
 import 'package:refill_app/presentation/home/home_screen.dart';
@@ -61,6 +62,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const PrimaryAppBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,15 +70,14 @@ class _SignInScreenState extends State<SignInScreen> {
             Expanded(
               child: Column(
                 children: [
-                  const SizedBox(height: 64.0),
-                  Padding(
-                    padding: const EdgeInsets.all(128.0),
-                    child: Image.asset('assets/icon/app_icon.png'),
-                  ),
+                  const SizedBox(height: 184.0),
+                  SvgPicture.asset('assets/image/app_icon.svg'),
+                  const SizedBox(height: 16.0),
                   Text(
                     '우리 아이와 어디서나 함께하는\n맞춤형 ai 서비스',
                     style: RefillThemeTextStyle.body6
                         .copyWith(color: RefillThemeColor.gray40),
+                    textAlign: TextAlign.center,
                   )
                 ],
               ),

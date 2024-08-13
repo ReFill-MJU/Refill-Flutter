@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:just_audio/just_audio.dart';
 import 'package:refill_app/core/app_bar/primary_app_bar.dart';
 import 'package:refill_app/core/button/yellow_button.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 import 'package:refill_app/core/theme/refill_theme_text_style.dart';
-import 'package:refill_app/presentation/finish/control_button.dart';
 import 'package:refill_app/presentation/home/home_screen.dart';
 
 class FinishScreen extends ConsumerWidget {
@@ -14,8 +12,6 @@ class FinishScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final player = AudioPlayer();
-
     return Scaffold(
       appBar: const PrimaryAppBar(),
       body: Column(
@@ -29,10 +25,6 @@ class FinishScreen extends ConsumerWidget {
                 Center(
                   child: SvgPicture.asset(
                     'assets/icon/ic_check.svg',
-                    colorFilter: const ColorFilter.mode(
-                      RefillThemeColor.sub90,
-                      BlendMode.srcIn,
-                    ),
                   ),
                 ),
                 const SizedBox(
@@ -45,7 +37,6 @@ class FinishScreen extends ConsumerWidget {
                     color: RefillThemeColor.gray70,
                   ),
                 ),
-                ControlButtons(player),
               ],
             ),
           ),

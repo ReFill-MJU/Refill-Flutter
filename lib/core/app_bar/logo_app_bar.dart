@@ -13,6 +13,7 @@ class LogoAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return PrimaryAppBar(
         leading: Padding(
       padding: const EdgeInsets.all(16.0),
+          child: SvgPicture.asset('assets/image/app_icon.svg'),
     ));
   }
 

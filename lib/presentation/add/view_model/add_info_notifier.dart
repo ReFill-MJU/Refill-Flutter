@@ -1,4 +1,6 @@
 import 'package:refill_app/data/model/add_info_model.dart';
+import 'package:refill_app/data/repository/child_repository.dart';
+import 'package:refill_app/presentation/home/view_model/my_child_list_notifier.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'add_info_notifier.g.dart';
@@ -87,5 +89,22 @@ class AddInfoNotifier extends _$AddInfoNotifier {
         ),
       );
     }
+  }
+
+  Future<void> childAdd() async {
+    String gender = '';
+    if (state.value!.isBoy) {
+      gender = 'BOY';
+    }
+    if (state.value!.isGirl) {
+      gender = 'GIRL';
+    }
+
+    await ChildRepository.childAdd(
+      state.value!.name,
+      gender,
+      state.value!.birth,
+    );
+    ref.invalidate(myChildListModelProvider);
   }
 }
