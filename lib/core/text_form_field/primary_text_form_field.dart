@@ -44,19 +44,19 @@ class PrimaryTextFormField extends StatelessWidget
         fillColor: RefillThemeColor.gray10,
         filled: true,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
             color: RefillThemeColor.gray10,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
             color: RefillThemeColor.sub80,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
             color: RefillThemeColor.gray70,
           ),

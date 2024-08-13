@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:refill_app/core/app_bar/logo_app_bar.dart';
-import 'package:refill_app/core/component/round_24_container.dart';
+import 'package:refill_app/presentation/home/view/baby_info.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
 
 import '../../core/text_form_field/care_text_form_field.dart';
@@ -22,7 +22,7 @@ class HomeScreen extends ConsumerWidget {
             SizedBox(
               height: 8.0,
             ),
-            Round24Container(),
+            BabyInfo(),
             CareTextFormField(),
           ],
         ),

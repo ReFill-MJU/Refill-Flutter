@@ -20,9 +20,10 @@ class BasicPictureFix extends ConsumerWidget {
                 fit: BoxFit.cover,
               )
             : null,
-        color: RefillThemeColor.gray10,
+        color: RefillThemeColor.gray5,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.0),
+          side: const BorderSide(width: 1, color: RefillThemeColor.gray10),
+          borderRadius: BorderRadius.circular(20.0),
         ),
       ),
     );
