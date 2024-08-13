@@ -13,6 +13,7 @@ class PrimaryTextFormField extends StatelessWidget
     this.hintText,
     this.initialValue,
     this.onChanged,
+    this.suffixIcon,
   });
 
   @override
@@ -27,6 +28,7 @@ class PrimaryTextFormField extends StatelessWidget
   final String? initialValue;
   @override
   final ValueChanged<String>? onChanged;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +41,10 @@ class PrimaryTextFormField extends StatelessWidget
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: RefillThemeColor.gray60,
+          color: RefillThemeColor.gray30,
         ),
-        fillColor: RefillThemeColor.gray10,
+        suffixIcon: suffixIcon,
+        fillColor: RefillThemeColor.realWhite,
         filled: true,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24.0),
@@ -52,7 +55,7 @@ class PrimaryTextFormField extends StatelessWidget
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
-            color: RefillThemeColor.sub80,
+            color: RefillThemeColor.primary30,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(

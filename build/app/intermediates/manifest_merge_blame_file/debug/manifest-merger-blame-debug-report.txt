@@ -1,0 +1,272 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.mju.refill"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:4:5-67
+15-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:4:22-64
+16    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+16-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:5:5-80
+16-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:5:22-77
+17
+18    <queries>
+18-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:45:5-50:15
+19        <intent>
+19-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:46:9-49:18
+20            <action android:name="android.intent.action.PROCESS_TEXT" />
+20-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:47:13-73
+20-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:47:21-70
+21
+22            <data android:mimeType="text/plain" />
+22-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:48:13-51
+22-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:48:19-48
+23        </intent>
+24        <!-- 네이버앱 : 로그인, 스킴로그인 -->
+25        <package android:name="com.nhn.android.search" /> <!-- 커스텀탭 로그인 -->
+25-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:16:9-58
+25-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:16:18-55
+26        <intent>
+26-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:18:9-20:18
+27            <action android:name="android.support.customtabs.action.CustomTabsService" />
+27-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:19:13-90
+27-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:19:21-87
+28        </intent>
+29
+30        <package android:name="com.android.chrome" />
+30-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:22:9-54
+30-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:22:18-51
+31    </queries>
+32
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[:flutter_naver_login] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/flutter_naver_login/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-79
+33-->[:flutter_naver_login] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/flutter_naver_login/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-76
+34
+35    <permission
+35-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47
+36        android:name="com.mju.refill.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+36-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:23:9-81
+37        android:protectionLevel="signature" />
+37-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:24:9-44
+38
+39    <uses-permission android:name="com.mju.refill.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+39-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:26:5-97
+39-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:26:22-94
+40
+41    <application
+42        android:name="android.app.Application"
+43        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+43-->[androidx.core:core:1.13.1] /Users/kimarin/.gradle/caches/transforms-3/fac84cd5ecf1ec88a8c98571217c9350/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
+44        android:debuggable="true"
+45        android:icon="@mipmap/ic_launcher"
+46        android:label="늘봄" >
+47        <meta-data
+48            android:name="com.naver.sdk.clientId"
+49            android:value="@string/NAVER_CLIENT_ID" />
+50        <meta-data
+51            android:name="com.naver.sdk.clientSecret"
+52            android:value="@string/NAVER_CLIENT_SECRET" />
+53        <meta-data
+54            android:name="com.naver.sdk.clientName"
+55            android:value="@string/NAVER_CLIENT_NAME" />
+56
+57        <activity
+58            android:name="com.mju.refill.MainActivity"
+59            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60            android:exported="true"
+61            android:hardwareAccelerated="true"
+62            android:launchMode="singleTop"
+63            android:taskAffinity=""
+64            android:theme="@style/LaunchTheme"
+65            android:windowSoftInputMode="adjustResize" >
+66            <meta-data
+67                android:name="io.flutter.embedding.android.NormalTheme"
+68                android:resource="@style/NormalTheme" />
+69
+70            <intent-filter>
+71                <action android:name="android.intent.action.MAIN" />
+72
+73                <category android:name="android.intent.category.LAUNCHER" />
+74            </intent-filter>
+75        </activity>
+76
+77        <meta-data
+78            android:name="flutterEmbedding"
+79            android:value="2" />
+80
+81        <provider
+81-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-19:20
+82            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+82-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-82
+83            android:authorities="com.mju.refill.flutter.image_provider"
+83-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-74
+84            android:exported="false"
+84-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-37
+85            android:grantUriPermissions="true" >
+85-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-47
+86            <meta-data
+86-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-18:75
+87                android:name="android.support.FILE_PROVIDER_PATHS"
+87-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+88                android:resource="@xml/flutter_image_picker_file_paths" />
+88-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:18:17-72
+89        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+90        <service
+90-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:21:9-33:19
+91            android:name="com.google.android.gms.metadata.ModuleDependencies"
+91-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-78
+92            android:enabled="false"
+92-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-36
+93            android:exported="false" >
+93-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:24:13-37
+94            <intent-filter>
+94-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-28:29
+95                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+95-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:27:17-94
+95-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:27:25-91
+96            </intent-filter>
+97
+98            <meta-data
+98-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-32:36
+99                android:name="photopicker_activity:0:required"
+99-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:31:17-63
+100                android:value="" />
+100-->[:image_picker_android] /Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/build/image_picker_android/intermediates/merged_manifest/debug/AndroidManifest.xml:32:17-33
+101        </service> <!-- <activity -->
+102        <!-- android:name="com.nhn.android.naverlogin.ui.OAuthLoginActivity" -->
+103        <!-- android:configChanges="orientation|screenSize" -->
+104        <!-- android:theme="@style/Theme.AppCompat.Light.Dialog" /> -->
+105        <activity
+105-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:32:9-35:78
+106            android:name="com.navercorp.nid.oauth.NidOAuthBridgeActivity"
+106-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:33:13-74
+107            android:configChanges="orientation|screenSize"
+107-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:34:13-59
+108            android:theme="@style/Theme.AppCompat.Transparent.NoActionBar" /> <!-- <activity -->
+108-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:35:13-75
+109        <!-- android:name="com.navercorp.nid.oauth.activity.NidOAuthWebViewActivity" -->
+110        <!-- android:configChanges="orientation|screenSize" -->
+111        <!-- android:screenOrientation="behind" -->
+112        <!-- android:label="OAuth2.0 by WebView" -->
+113        <!-- android:theme="@style/Theme.AppCompat.Transparent.NoActionBar"/> -->
+114        <activity
+114-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:44:9-63:20
+115            android:name="com.navercorp.nid.oauth.activity.NidOAuthCustomTabActivity"
+115-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:45:13-86
+116            android:configChanges="orientation|screenSize"
+116-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:46:13-59
+117            android:exported="true"
+117-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:47:13-36
+118            android:label="OAuth2.0 by Custom tabs"
+118-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:48:13-52
+119            android:launchMode="singleTask"
+119-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:49:13-44
+120            android:screenOrientation="behind"
+120-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:50:13-47
+121            android:theme="@style/Theme.AppCompat.NoActionBar" >
+121-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:51:13-63
+122            <intent-filter>
+122-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:52:13-62:29
+123                <action android:name="android.intent.action.VIEW" />
+123-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:53:17-69
+123-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:53:25-66
+124
+125                <category android:name="android.intent.category.DEFAULT" />
+125-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:55:17-76
+125-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:55:27-73
+126                <category android:name="android.intent.category.BROWSABLE" />
+126-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:56:17-78
+126-->[com.navercorp.nid:oauth:5.4.0] /Users/kimarin/.gradle/caches/transforms-3/2968db27d733b942210078e0b3df8b33/transformed/jetified-oauth-5.4.0/AndroidManifest.xml:56:27-75
+127                <!-- Intent URL 에서 로그인 액티비티를 실행하기 위해 설정 -->
+128                <data
+128-->/Users/kimarin/2024-1/k 해커톤/Refill/Refill-Flutter/android/app/src/main/AndroidManifest.xml:48:13-51
+129                    android:host="authorize"
+130                    android:path="/"
+131                    android:scheme="naver3rdpartylogin" />
+132            </intent-filter>
+133        </activity>
+134
+135        <uses-library
+135-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
+136            android:name="androidx.window.extensions"
+136-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:24:13-54
+137            android:required="false" />
+137-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:25:13-37
+138        <uses-library
+138-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:26:9-28:40
+139            android:name="androidx.window.sidecar"
+139-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:27:13-51
+140            android:required="false" />
+140-->[androidx.window:window:1.2.0] /Users/kimarin/.gradle/caches/transforms-3/d47b1192960df52846144d82ac9e1d6f/transformed/jetified-window-1.2.0/AndroidManifest.xml:28:13-37
+141
+142        <provider
+142-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:24:9-32:20
+143            android:name="androidx.startup.InitializationProvider"
+143-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:25:13-67
+144            android:authorities="com.mju.refill.androidx-startup"
+144-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:26:13-68
+145            android:exported="false" >
+145-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:27:13-37
+146            <meta-data
+146-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+147                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+147-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+148                android:value="androidx.startup" />
+148-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/kimarin/.gradle/caches/transforms-3/d674cd90e13def17f77b3f8010d35e09/transformed/jetified-lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+149            <meta-data
+149-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+150                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+150-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+151                android:value="androidx.startup" />
+151-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+152        </provider>
+153
+154        <receiver
+154-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+155            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+155-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+156            android:directBootAware="false"
+156-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+157            android:enabled="true"
+157-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+158            android:exported="true"
+158-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+159            android:permission="android.permission.DUMP" >
+159-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+160            <intent-filter>
+160-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+161                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+161-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+162            </intent-filter>
+163            <intent-filter>
+163-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+164                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+164-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+165            </intent-filter>
+166            <intent-filter>
+166-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+167                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+167-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+167-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+168            </intent-filter>
+169            <intent-filter>
+169-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+170                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+170-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+170-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/kimarin/.gradle/caches/transforms-3/166e5df34c1c015ef6ddeae137513a3f/transformed/jetified-profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+171            </intent-filter>
+172        </receiver>
+173    </application>
+174
+175</manifest>
