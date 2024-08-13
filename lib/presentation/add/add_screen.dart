@@ -6,9 +6,10 @@ import 'package:refill_app/presentation/add/view/add_first.dart';
 import 'package:refill_app/presentation/add/view/add_fourth.dart';
 import 'package:refill_app/presentation/add/view/add_second.dart';
 import 'package:refill_app/presentation/add/view/add_third.dart';
+import 'package:refill_app/presentation/add/view_model/add_info_notifier.dart';
+import 'package:refill_app/presentation/add/view_model/answer_notifier.dart';
 import 'package:refill_app/presentation/add/view_model/move_notifier.dart';
 import 'package:refill_app/presentation/finish/finish_screen.dart';
-import 'package:refill_app/presentation/home/home_screen.dart';
 
 import '../../core/app_bar/back_left_title_app_bar.dart';
 
@@ -19,6 +20,10 @@ class AddScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     var moveProvider = ref.watch(onBoardingMoveProvider);
     var move = ref.read(onBoardingMoveProvider.notifier);
+    var addInfoNotifier = ref.read(addInfoNotifierProvider.notifier);
+    var addInfo = ref.watch(addInfoNotifierProvider);
+    var answerNotifier = ref.read(answerNotifierProvider.notifier);
+    var answer = ref.watch(answerNotifierProvider);
 
     String currentIndex;
     bool enabled = false;
@@ -26,16 +31,20 @@ class AddScreen extends ConsumerWidget {
     switch (moveProvider) {
       case "first":
         currentIndex = "1";
+        enabled = addInfo.value?.isComplete ?? false;
         break;
       case "second":
         currentIndex = "2";
+        enabled = answer.value?.fieldNotEmpty ?? false;
         break;
       case "third":
         currentIndex = "3";
+        enabled = answer.value?.fieldNotEmpty ?? false;
         false;
         break;
       case "fourth":
         currentIndex = "4";
+        enabled = answer.value?.fieldNotEmpty ?? false;
         break;
       default:
         currentIndex = "0";
@@ -115,8 +124,10 @@ class AddScreen extends ConsumerWidget {
                                 move.moveToSecondPage();
                               case "second":
                                 move.moveToThirdPage();
+                                ref.invalidate(answerNotifierProvider);
                               case "third":
                                 move.moveToFourthPage();
+                                ref.invalidate(answerNotifierProvider);
                               case "fourth":
                                 Navigator.pushAndRemoveUntil(
                                   context,
@@ -125,9 +136,10 @@ class AddScreen extends ConsumerWidget {
                                   ),
                                   (route) => false,
                                 );
+                                ref.invalidate(answerNotifierProvider);
                             }
                           },
-                          enabled: true,
+                          enabled: enabled,
                         ),
                       ),
                     ),

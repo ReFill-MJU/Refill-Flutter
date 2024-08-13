@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:refill_app/core/app_bar/primary_app_bar.dart';
 import 'package:refill_app/core/button/yellow_button.dart';
@@ -25,18 +26,25 @@ class FinishScreen extends ConsumerWidget {
                 const SizedBox(
                   height: 64.0,
                 ),
-                Center(child: Image.asset('assets/image/img_finish.png')),
+                Center(
+                  child: SvgPicture.asset(
+                    'assets/icon/ic_check.svg',
+                    colorFilter: const ColorFilter.mode(
+                      RefillThemeColor.sub90,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
                 const SizedBox(
                   height: 16.0,
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  '만의 맞춤형 AI\n늘봄이가 만들어졌어요!',
+                  '만의 맞춤형 AI\n늘봄이가 만들어 졌어요!',
                   style: RefillThemeTextStyle.title4.copyWith(
                     color: RefillThemeColor.gray70,
                   ),
                 ),
-
                 ControlButtons(player),
               ],
             ),

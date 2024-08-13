@@ -45,7 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (context) => HomeScreen(),
+          builder: (context) => const HomeScreen(),
         ),
         (route) => false,
       );
@@ -55,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   void initState() {
     super.initState();
-    _asyncMethod();
+    // _asyncMethod();
   }
 
   @override

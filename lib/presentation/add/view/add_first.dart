@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:refill_app/presentation/add/view_model/add_info_notifier.dart';
 
 import '../../../core/button/primary_button.dart';
 import '../../../core/component/primary_calendar.dart';
@@ -12,37 +13,60 @@ class AddFirst extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var addInfoNotifier = ref.read(addInfoNotifierProvider.notifier);
+    var info = ref.watch(addInfoNotifierProvider);
+
+    var isBoy = info.value?.isBoy ?? false;
+    var isGirl = info.value?.isGirl ?? false;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const AddSubTitle(text: "아이 이름을 입력해 주세요"),
-        const PrimaryTextFormField(
+        PrimaryTextFormField(
           initialValue: '',
           maxLines: 1,
           maxLength: 6,
           minLines: 1,
+          onChanged: (value) {
+            addInfoNotifier.updateName(value);
+          },
         ),
         const SizedBox(
           height: 32.0,
         ),
         const AddSubTitle(text: "성별을 선택해 주세요"),
-        const Row(
+        Row(
           children: [
             PrimaryButton(
-              enabled: true,
+              onPressed: () {
+                ref.read(addInfoNotifierProvider.notifier).updateIsBoy();
+              },
+              enabled: isBoy ? false : true,
               text: '남자',
-              textColor: RefillThemeColor.sub90,
-              borderColor: RefillThemeColor.sub90,
+              textColor:
+                  isBoy ? RefillThemeColor.realWhite : RefillThemeColor.sub90,
+              borderColor:
+                  isBoy ? RefillThemeColor.realWhite : RefillThemeColor.sub90,
+              backgroundColor:
+                  isBoy ? RefillThemeColor.sub90 : RefillThemeColor.realWhite,
               borderRadius: 32.0,
             ),
-            SizedBox(
+            const SizedBox(
               width: 8.0,
             ),
             PrimaryButton(
-              enabled: true,
+              onPressed: () {
+                ref.read(addInfoNotifierProvider.notifier).updateIsGirl();
+              },
+              enabled: isGirl ? false : true,
               text: '여자',
-              textColor: RefillThemeColor.sub90,
-              borderColor: RefillThemeColor.sub90,
+              textColor:
+                  isGirl ? RefillThemeColor.realWhite : RefillThemeColor.sub90,
+              borderColor:
+                  isGirl ? RefillThemeColor.realWhite : RefillThemeColor.sub90,
+              backgroundColor:
+                  isGirl ? RefillThemeColor.sub90 : RefillThemeColor.realWhite,
               borderRadius: 32.0,
             ),
           ],
@@ -50,7 +74,9 @@ class AddFirst extends ConsumerWidget {
         const SizedBox(
           height: 32.0,
         ),
-        const AddSubTitle(text: "아이가 태어난 날을 선택해 주세요"),
+        const AddSubTitle(
+          text: "아이가 태어난 날을 선택해 주세요",
+        ),
         PrimaryCalender(
           onDateSelected: (DateTime value) {},
         ),

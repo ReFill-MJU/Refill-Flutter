@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 import 'package:refill_app/core/theme/refill_theme_text_style.dart';
+import 'package:refill_app/presentation/add/view_model/add_info_notifier.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class PrimaryCalender extends ConsumerStatefulWidget {
@@ -30,7 +31,7 @@ class _PrimaryCalenderState extends ConsumerState<PrimaryCalender> {
         context: context,
         initialDate: _selectedDay ?? DateTime.now(),
         firstDate: DateTime.utc(2017, 01, 01),
-        lastDate: DateTime.utc(2024, 08, 14),
+        lastDate: DateTime.now(),
         initialDatePickerMode: DatePickerMode.year,
         initialEntryMode: DatePickerEntryMode.calendarOnly,
       );
@@ -48,8 +49,8 @@ class _PrimaryCalenderState extends ConsumerState<PrimaryCalender> {
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: TableCalendar(
         focusedDay: _focusedDay,
-        firstDay: DateTime.utc(2024, 01, 01),
-        lastDay: DateTime.utc(2099, 12, 31),
+        firstDay: DateTime.utc(2017, 01, 01),
+        lastDay: DateTime.now(),
         locale: 'ko_KR',
         selectedDayPredicate: (day) {
           return isSameDay(_selectedDay, day);
@@ -59,8 +60,11 @@ class _PrimaryCalenderState extends ConsumerState<PrimaryCalender> {
             setState(() {
               _selectedDay = selectedDay;
               _focusedDay = focusedDay;
+              ref
+                  .read(addInfoNotifierProvider.notifier)
+                  .updateDateFormatted(selectedDay);
             });
-            widget.onDateSelected(selectedDay); // Notify the parent widget
+            widget.onDateSelected(selectedDay);
           }
         },
         onPageChanged: (focusedDay) {

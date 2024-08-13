@@ -7,8 +7,10 @@ import 'package:refill_app/core/component/round_top_20_container.dart';
 import 'package:refill_app/core/text_form_field/care_text_form_field.dart';
 import 'package:refill_app/core/theme/refill_theme_color.dart';
 import 'package:refill_app/core/theme/refill_theme_text_style.dart';
+import 'package:refill_app/data/model/my_child_list_model.dart';
 import 'package:refill_app/presentation/home/view/baby_info.dart';
 import 'package:refill_app/presentation/home/view/baby_list.dart';
+import 'package:refill_app/presentation/home/view_model/my_child_list_notifier.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({
@@ -17,6 +19,8 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<List<MyChildListModel>> childList =
+        ref.watch(myChildListModelProvider);
     return Scaffold(
       appBar: const LogoAppBar(),
       body: Column(
@@ -66,7 +70,8 @@ class HomeScreen extends ConsumerWidget {
                         Container(
                           height: 1000,
                           decoration: const BoxDecoration(
-                              color: RefillThemeColor.sub10),
+                            color: RefillThemeColor.sub10,
+                          ),
                         )
                       ],
                     ),
