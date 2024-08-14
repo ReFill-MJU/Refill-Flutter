@@ -11,6 +11,7 @@ final ApiClient apiClient = ApiClient();
 
 class SignInService {
   Future<String?> naverSignIn(String accessToken) async {
+    print(accessToken);
     try {
       var url = Uri.http(
         '${dotenv.env['APP_URL']}',

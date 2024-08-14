@@ -5,7 +5,7 @@ abstract class BaseAppBar {
 
   double? get leadingWidth;
 
-  Widget? get title;
+  String? get title;
 
   List<Widget>? get actions;
 

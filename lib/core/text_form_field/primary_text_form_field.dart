@@ -12,10 +12,8 @@ class PrimaryTextFormField extends StatelessWidget
     this.minLines,
     this.hintText,
     this.initialValue,
-    this.errorText,
-    this.errorBorder,
-    this.errorStyle,
     this.onChanged,
+    this.suffixIcon,
   });
 
   @override
@@ -29,13 +27,8 @@ class PrimaryTextFormField extends StatelessWidget
   @override
   final String? initialValue;
   @override
-  final String? errorText;
-  @override
-  final OutlineInputBorder? errorBorder;
-  @override
-  final TextStyle? errorStyle;
-  @override
   final ValueChanged<String>? onChanged;
+  final Widget? suffixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -48,29 +41,29 @@ class PrimaryTextFormField extends StatelessWidget
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: const TextStyle(
-          color: RefillThemeColor.gray60,
+          color: RefillThemeColor.gray30,
         ),
+        suffixIcon: suffixIcon,
+        fillColor: RefillThemeColor.realWhite,
+        filled: true,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
-            color: RefillThemeColor.gray90,
+            color: RefillThemeColor.gray20,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
-            color: RefillThemeColor.primary90,
+            color: RefillThemeColor.sub90,
           ),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(24.0),
           borderSide: const BorderSide(
             color: RefillThemeColor.gray70,
           ),
         ),
-        errorText: errorText,
-        errorBorder: errorBorder,
-        errorStyle: errorStyle,
       ),
       onChanged: onChanged,
     );
